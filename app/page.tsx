@@ -32,6 +32,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -132,6 +133,16 @@ function HeroSection() {
       <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:32px_32px]" />
       <div className="container relative z-10 mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center">
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/logo.png"
+              alt="ScaleWithPK Logo"
+              width={72}
+              height={72}
+              className="rounded-lg shadow-lg border border-white/20 bg-white/80"
+              priority
+            />
+          </div>
           <Badge className="mb-6 bg-white/20 text-white hover:bg-white/30">
             17+ Years of IT Industry Experience
           </Badge>

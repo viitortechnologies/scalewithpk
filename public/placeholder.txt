@@ -1,0 +1,1 @@
+This is a placeholder file to create the public directory for Next.js. Place your static assets (e.g., logo.png) here.
