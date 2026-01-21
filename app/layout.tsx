@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://scalewithpk.com'),
   title: 'PK Sir - IT Career Coach & DevOps Mentor | ScaleWithPK',
   description: 'PK Sir is an experienced IT Career Coach and DevOps Trainer with 17+ years of industry experience. Expert mentorship for career transformation, DevOps training, and IT job guidance. Trained 12,000+ students.',
+  icons: {
+    icon: '/fav.png',
+    shortcut: '/fav.png',
+    apple: '/fav.png',
+  },
   keywords: [
     'scalewithpk',
     'scale with pk',
@@ -29,17 +34,26 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'PK Sir' }],
   openGraph: {
-    title: 'PK Sir - IT Career Coach & DevOps Mentor | ScaleWithPK',
-    description: '17+ years of IT experience. Expert mentorship for career transformation. 12,000+ students trained, 1,000+ professionals placed.',
+    title: 'ScaleWithPK – Learn & Grow in IT with PK Sir',
+    description: 'Mentorship, real-world DevOps & Azure learning. Grow your IT career with guidance from PK Sir.',
     url: 'https://scalewithpk.com',
     siteName: 'ScaleWithPK',
     locale: 'en_IN',
     type: 'website',
+    images: [
+      {
+        url: 'https://scalewithpk.com/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'ScaleWithPK - PK Sir IT Career Mentor',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PK Sir - IT Career Coach & DevOps Mentor',
-    description: '17+ years of IT experience. Expert mentorship for career transformation.',
+    title: 'ScaleWithPK – Learn & Grow in IT with PK Sir',
+    description: 'Mentorship, real-world DevOps & Azure learning. Grow your IT career with guidance from PK Sir.',
+    images: ['https://scalewithpk.com/og.png'],
   },
   robots: {
     index: true,
@@ -66,6 +80,9 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <head>
         <link rel="canonical" href="https://scalewithpk.com" />
+        <link rel="icon" type="image/png" href="/fav.png" />
+        <link rel="shortcut icon" type="image/png" href="/fav.png" />
+        <link rel="apple-touch-icon" href="/fav.png" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
