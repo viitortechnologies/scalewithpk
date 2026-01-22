@@ -504,63 +504,166 @@ function WhoCanLearnSection() {
       title: 'Experienced IT Professionals',
       description:
         'Working IT professionals seeking structured growth, high packages, and career acceleration. Whether you\'re stuck in the same role or want to transition to senior positions, structured mentorship helps you negotiate better packages and grow systematically.',
+      solution: 'Structured growth path, high package negotiation, senior role transition',
+      color: 'from-blue-500/10 to-blue-600/5',
+      iconBg: 'bg-blue-500/10',
+      iconColor: 'text-blue-600',
     },
     {
       icon: Users,
       title: 'Non-IT Roles in IT Companies',
       description:
         'If you\'re working in an IT company but in non-technical roles (HR, Admin, Sales), and want to switch to technical roles, PK Sir provides clear roadmaps for this transition with industry-relevant guidance.',
+      solution: 'Clear roadmap for technical role transition, industry-relevant guidance',
+      color: 'from-purple-500/10 to-purple-600/5',
+      iconBg: 'bg-purple-500/10',
+      iconColor: 'text-purple-600',
     },
     {
       icon: Clock,
       title: 'Career Gap Candidates',
       description:
         'Professors, banking aspirants, career switchers, or anyone facing re-entry barriers after a gap. PK Sir\'s mentorship helps you overcome career gaps, rebuild confidence, and re-enter the IT industry with updated skills.',
+      solution: 'Overcome career gaps, rebuild confidence, re-enter IT industry',
+      color: 'from-orange-500/10 to-orange-600/5',
+      iconBg: 'bg-orange-500/10',
+      iconColor: 'text-orange-600',
     },
     {
       icon: Target,
       title: 'Non-IT to IT Switch Aspirants',
       description:
         'Professionals from completely different fields (Engineering non-IT, Business, etc.) wanting to transition into IT. Get comprehensive guidance, structured learning paths, and practical support for a successful career switch.',
+      solution: 'Comprehensive guidance, structured learning paths, practical support',
+      color: 'from-green-500/10 to-green-600/5',
+      iconBg: 'bg-green-500/10',
+      iconColor: 'text-green-600',
     },
     {
       icon: GraduationCap,
       title: 'Freshers Passionate About IT',
       description:
         'Recent graduates or freshers who are passionate about building an IT career but lack real-world experience. Learn industry-relevant skills, build confidence, and prepare for interviews with hands-on guidance.',
+      solution: 'Industry-relevant skills, confidence building, interview preparation',
+      color: 'from-pink-500/10 to-pink-600/5',
+      iconBg: 'bg-pink-500/10',
+      iconColor: 'text-pink-600',
     },
   ];
 
   return (
-    <section className="bg-muted/30 py-20 lg:py-32">
-      <div className="container mx-auto px-4">
-        <div className="mx-auto mb-16 max-w-3xl text-center">
-          <h2 className="mb-4 font-poppins text-3xl font-bold lg:text-4xl">
+    <section className="relative py-24 lg:py-32 bg-gradient-to-br from-primary/5 via-background to-accent/5 overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4">
+        {/* Enhanced Header */}
+        <div className="mx-auto mb-20 max-w-4xl text-center">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-6 py-3 border border-primary/20">
+            <CheckCircle2 className="h-5 w-5 text-primary" />
+            <span className="font-poppins text-sm font-semibold text-primary">
+              Solutions for Every IT Career Aspirant
+            </span>
+          </div>
+          <h2 className="mb-6 font-poppins text-4xl font-bold lg:text-5xl">
             Who Can <span className="gradient-text">Learn</span>
           </h2>
+          <p className="mb-4 text-xl leading-relaxed text-muted-foreground">
+            PK Sir's mentorship provides <strong>targeted solutions</strong> for diverse IT career challenges
+          </p>
           <p className="text-lg text-muted-foreground">
-            PK Sir's mentorship is designed for diverse IT career aspirants - from experienced professionals to career switchers
+            Whether you're an experienced professional, career switcher, or fresher - we have a structured path for your success
           </p>
         </div>
 
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {/* Enhanced Cards Grid */}
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {audiences.map((audience, index) => (
-              <Card key={index} className="border-2 transition-shadow hover:shadow-lg">
-                <CardContent className="p-6">
-                  <div className="mb-4 flex items-center gap-4">
-                    <div className="rounded-lg bg-primary/10 p-3">
-                      <audience.icon className="h-6 w-6 text-primary" />
+              <Card
+                key={index}
+                className="group relative border-2 bg-white/80 backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:scale-105 hover:border-primary/50 overflow-hidden"
+              >
+                {/* Gradient background on hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${audience.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                
+                <CardContent className="relative p-8">
+                  {/* Icon with enhanced styling */}
+                  <div className="mb-6 flex items-start gap-4">
+                    <div className={`${audience.iconBg} ${audience.iconColor} rounded-xl p-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                      <audience.icon className="h-8 w-8" />
                     </div>
-                    <h3 className="font-poppins text-lg font-semibold">
-                      {audience.title}
-                    </h3>
+                    <div className="flex-1">
+                      <h3 className="font-poppins text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                        {audience.title}
+                      </h3>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 className="h-4 w-4 text-success" />
+                        <span className="font-medium">Solution Available</span>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-muted-foreground">{audience.description}</p>
+
+                  {/* Description */}
+                  <p className="mb-6 text-base leading-relaxed text-muted-foreground group-hover:text-foreground/90 transition-colors">
+                    {audience.description}
+                  </p>
+
+                  {/* Solution highlight */}
+                  <div className="pt-4 border-t border-border/50">
+                    <div className="flex items-start gap-2">
+                      <Rocket className="h-5 w-5 text-success flex-shrink-0 mt-0.5" />
+                      <div>
+                        <p className="text-sm font-semibold text-foreground mb-1">Our Solution:</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {audience.solution}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Hover indicator */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                 </CardContent>
               </Card>
             ))}
           </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="mt-16 text-center">
+          <Card className="mx-auto max-w-3xl border-2 border-primary/20 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5">
+            <CardContent className="p-8">
+              <div className="mb-4 flex justify-center">
+                <div className="rounded-full bg-primary/10 p-4">
+                  <Target className="h-8 w-8 text-primary" />
+                </div>
+              </div>
+              <h3 className="mb-4 font-poppins text-2xl font-bold">
+                Find Your Category? We Have a Solution
+              </h3>
+              <p className="mb-6 text-lg text-muted-foreground">
+                No matter which category you belong to, PK Sir's structured mentorship approach provides personalized solutions to help you achieve your IT career goals.
+              </p>
+              <Button
+                size="lg"
+                className="bg-primary text-white hover:bg-primary/90 shadow-lg"
+                asChild
+              >
+                <a
+                  href="https://wa.me/919948574575"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageSquare className="mr-2 h-5 w-5" />
+                  Get Your Personalized Solution
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
